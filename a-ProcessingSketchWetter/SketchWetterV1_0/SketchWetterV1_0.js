@@ -51,9 +51,3 @@ function mouseClicked() {
      };
   clouds.push(newCloud);
 }
-
-//function keyPressed(s) {
-  //background(255, 204, 0);
- // fill(255, 204, 0);
- // rect(0, 0, windowWidth, windowHeight * 0.65);
-//}
