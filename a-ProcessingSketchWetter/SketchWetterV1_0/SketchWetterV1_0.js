@@ -1,12 +1,13 @@
   let clouds = [];
 
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
+
 }
 
 function draw(){
     background(80, 0, 175);
-
   for (i = 0; i < clouds.length; i++) {
     let currentObj = clouds[i];
     cloud(currentObj.xpos, currentObj.ypos, currentObj.size);
@@ -22,16 +23,23 @@ function draw(){
      rect(0, windowHeight * 0.65, windowWidth, windowHeight);
  fill(80);
    triangle(windowWidth * 0.5, windowHeight * 0.65, windowWidth * 0.25, windowHeight, windowWidth * 0.75, windowHeight);
-  
+   stroke(0);
+    strokeWeight(30);
+  line(windowWidth * 0.2, windowHeight * 0.6, windowWidth * 0.2, windowHeight * 0.9);
+  fill("white");
+  stroke('red');
+  strokeWeight(30);
+  triangle(windowWidth * 0.13, windowHeight * 0.7, windowWidth * 0.2, windowHeight * 0.5, windowWidth * 0.27, windowHeight * 0.7); 
+
 
 }
 function cloud(x, y, size) {
   fill(100);
   noStroke();
-  arc(x, y, 300 * size, 240 * size, PI + TWO_PI, TWO_PI);
-  arc(x + 120, y, 300 * size, 480 * size, PI + TWO_PI, TWO_PI);
-  arc(x + 300, y, 300 * size, 420 * size, PI + TWO_PI, TWO_PI);
-  arc(x + 480, y, 360 * size, 240 * size, PI + TWO_PI, TWO_PI);
+  arc(x, y, 100 * size, 80 * size, PI + TWO_PI, TWO_PI);
+  arc(x + 40, y, 100 * size, 160 * size, PI + TWO_PI, TWO_PI);
+  arc(x + 100, y, 100 * size, 140 * size, PI + TWO_PI, TWO_PI);
+  arc(x + 160, y, 120 * size, 80 * size, PI + TWO_PI, TWO_PI);
 
 }
 
@@ -40,7 +48,7 @@ function mouseClicked() {
     xpos: mouseX,
     ypos: mouseY,
     size: random(0.8, 1.3)
-  };
+     };
   clouds.push(newCloud);
 }
 
@@ -49,10 +57,3 @@ function mouseClicked() {
  // fill(255, 204, 0);
  // rect(0, 0, windowWidth, windowHeight * 0.65);
 //}
-function keyPressed() {
-  if (keyCode === LEFT_ARROW) {
-    value = 255;
-  } else if (keyCode === RIGHT_ARROW) {
-    value = 0;
-  }
-}
